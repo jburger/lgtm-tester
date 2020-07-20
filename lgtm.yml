@@ -1,0 +1,3 @@
+queries:
+  - include: cs/second-order-sql-injection
+  - include: cs/insecure-sql-connection
