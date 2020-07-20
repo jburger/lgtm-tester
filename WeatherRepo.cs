@@ -56,7 +56,7 @@ namespace lgtm_tester
         {
             using var connection = DbConnection();
             connection.Open();
-            var results = connection.Query<WeatherSummary>($"select * from weather_summary");
+            var results = connection.Query<WeatherSummary>("select * from weather_summary");
             return results;
         }
     }
