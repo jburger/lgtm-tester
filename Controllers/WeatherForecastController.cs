@@ -33,5 +33,12 @@ namespace lgtm_tester.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet]
+        [Route("summaries")]
+        public IEnumerable<WeatherSummary> SummarySearchByName(string name)
+        {
+            return _repo.SummarySearchByName(name);
+        }
     }
 }

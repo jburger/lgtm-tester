@@ -24,6 +24,14 @@ namespace lgtm_tester
             }
         }
 
+        public IEnumerable<WeatherSummary> SummarySearchByName(string summaryName)
+        {
+            using var connection = DbConnection();
+            connection.Open();
+            var results = connection.Query<WeatherSummary>($"select * from weather_summary where name like '%{summaryName}%'");
+            return results;
+        }
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
