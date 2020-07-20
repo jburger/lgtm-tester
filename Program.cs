@@ -20,6 +20,7 @@ namespace lgtm_tester
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    WeatherRepo.Init();
                     webBuilder.UseStartup<Startup>();
                 });
     }
