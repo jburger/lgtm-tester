@@ -28,7 +28,7 @@ namespace lgtm_tester
         {
             using var connection = DbConnection();
             connection.Open();
-            var results = connection.Query<WeatherSummary>($"select * from weather_summary where name like '%' + summaryName + '%'");
+            var results = connection.Query<WeatherSummary>($"select * from weather_summary where name like '%" + summaryName + "%'");
             return results;
         }
 
